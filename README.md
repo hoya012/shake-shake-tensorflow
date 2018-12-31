@@ -1,6 +1,8 @@
 # shake-shake-tensorflow
 Simple Code Implementation of ["Shake-Shake Regularization"](https://arxiv.org/pdf/1705.07485.pdf) using TensorFlow.
 ![](https://github.com/hoya012/shake-shake-tensorflow/blob/master/assets/shake-shake.PNG)
+
+
 *Last update : 2018/12/31*
 
 ## Contributor
