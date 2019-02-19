@@ -28,7 +28,7 @@ Implementation of SGDR is simple. The ShakeNet has a hierarchical struecture. So
 Important part of code is `Shake Branch` and i use `stop_gradient` trick.
 
 - [SGDR: Stochastic Gradient Descent with Warm Restarts](https://arxiv.org/pdf/1608.03983.pdf) method
-```
+```python
 def _update_learning_rate_cosine(self, global_step, num_iterations):
         """
         update current learning rate, using Cosine function without restart(Loshchilov & Hutter, 2016).
@@ -44,7 +44,7 @@ def _update_learning_rate_cosine(self, global_step, num_iterations):
 ```
 
 - Shake Stage 
-```
+```python
 def shake_stage(self, x, output_filters, num_blocks, stride, batch_size, d):
         """
         Build sub stage with many shake blocks.
@@ -69,7 +69,7 @@ def shake_stage(self, x, output_filters, num_blocks, stride, batch_size, d):
 ```
 
 - Shake Block
-```
+```python
 def shake_block(self, x, shake_stage_idx, block_idx, output_filters, stride, batch_size):
         """
         Build one shake-shake blocks with branch and skip connection.
@@ -111,7 +111,7 @@ def shake_block(self, x, shake_stage_idx, block_idx, output_filters, stride, bat
 ```
 
 - Shake Branch **(Important)**
-```
+```python
 def shake_branch(self, x, output_filters, stride, random_forward, random_backward, num_branches):
         """
         Build one shake-shake branch.
@@ -141,7 +141,7 @@ def shake_branch(self, x, output_filters, stride, random_forward, random_backwar
 ```
 
 - Shake Skip Connection
-```
+```python
 def shake_skip_connection(self, x, output_filters, stride):
         """
         Build one shake-shake skip connection.
@@ -180,7 +180,7 @@ def shake_skip_connection(self, x, output_filters, stride):
 ## Usage
 For training, testing, i used `CIFAR-10` Dataset and you can simply run my code.
 
-```
+```python
 python train.py
 python test.py
 ```
